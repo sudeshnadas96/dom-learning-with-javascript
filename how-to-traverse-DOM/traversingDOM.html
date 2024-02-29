@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Learning About Nodes</title>
+
+    <style>
+        * {
+            border: 2px solid #dedede;
+            padding: 12px;
+            margin: 15px;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            max-width: 650px;
+            font-family: sans-serif;
+            color: rgb(113, 4, 4);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Shark World</h1>
+    <p>The world's leading source on <strong>shark</strong> related information.</p>
+    <h2>Types of Sharks</h2>
+    <ol type = "i">
+        <li>Hammerhead</li>
+        <li>Tiger</li>
+        <li>Great White</li>
+    </ol>
+</body>
+
+<script>
+    const h1 = document.getElementsByTagName('h1')[0];
+    const p = document.getElementsByTagName('p')[0];
+    const ol = document.getElementsByTagName('ol')[0];
+    const html = document.documentElement;
+    console.log(html.parentNode);//will return #document as the parentnode in the console.
+    console.log(html.parentElement);//will return null in console
+    //accessing child nodes:ol.childNodes > [text, li, text, li, text, li, text]
+    for(let element of ol.children) {
+        element.style.background = "yellow";
+        element.style.border = "1px solid blue";
+    }
+</script>
+
+</html>
