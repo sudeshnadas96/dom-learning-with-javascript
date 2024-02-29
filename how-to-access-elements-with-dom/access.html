@@ -44,6 +44,16 @@
     const demoClass = document.getElementsByClassName('demo');
     demoClass[0].style.border = "3px solid orange";
     demoClass[1].style.border = "2px dotted red";
+    const demoTag = document.getElementsByTagName('article');
+    for(let i = 0; i < demoTag.length; i++){
+      demoTag[i].style.border = "2px solid green";
+    }
+    const demoQuery = document.querySelector('#demo-query');
+    demoQuery.style.border = "2px solid pink";
+    const demoQueryAll = document.querySelectorAll('.demo-query-all');
+    demoQueryAll.forEach(query => {
+      query.style.border = "2px dotted purple";
+    });
   </script>
 
 </body>
