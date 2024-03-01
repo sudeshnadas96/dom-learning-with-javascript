@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Learning to make changes in the DOM</title>
+    <style>
+        h1 {
+            color: orange;
+        }
+
+        p {
+            color: blue;
+        }
+
+        ol {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><u>Document Object Model</u></h1>
+    <script>
+        const paranew = document.querySelector('body');
+        //creating element node
+        const paragraph = document.createElement('p');
+        console.log(paragraph);
+        //adding text to the element: paragraph
+        paragraph.textContent = "after creating the node element, I have successfully inserted text to the element";
+        //adding paragraph to the html
+        paranew.appendChild(paragraph);
+        //console.log(paragraph);//
+        //paragraph.innerHTML = "I'm a paragraph with <strong>bold</strong> text.";//
+
+        //creating text node
+        const text = document.createTextNode("it is a new text");
+        console.log(text);
+        //creating another element node
+        const paraUpdated = document.querySelector('body');
+        const paragraph_1 = document.createElement('p');
+        paragraph_1.innerHTML = "Following is the list of <strong>languages</strong> known:";
+        paraUpdated.appendChild(paragraph_1);
+        //creating a list element
+        const bodyElement = document.querySelector('body');
+        const list = document.createElement('ol');
+        list.innerHTML = "<li> Javascript </li> <li> Java </li> <li> C </li> <li> Sql </li> <li> Python </li>";
+        bodyElement.appendChild(list);
+        const paragraph_2 = document.createElement('p');
+        paragraph_2.innerHTML = "<b>!! Languages are easy to know, but without practice, tough to retain.....keep practicing...";
+        paranew.insertBefore(paragraph_2, paranew.nextElementSibling);
+
+        //replacing a node
+        const modified_list = document.createElement('li');
+        modified_list.innerHTML = "Javascript DOM";
+        list.replaceChild(modified_list, list.children[0]);
+
+        //removing nodes
+        list.removeChild(list.lastElementChild);
+    </script>
+
+</body>
+
+</html>
