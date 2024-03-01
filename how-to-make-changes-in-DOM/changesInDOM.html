@@ -54,8 +54,9 @@
         modified_list.innerHTML = "Javascript DOM";
         list.replaceChild(modified_list, list.children[0]);
 
-        //removing nodes
+        //removing child node and node
         list.removeChild(list.lastElementChild);
+        list.children[1].remove();
     </script>
 
 </body>
